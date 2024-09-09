@@ -1,0 +1,28 @@
+municipio,departamento,cultivo,topografia
+FUNZA,CUNDINAMARCA,Uchuva,Ondulado
+FUNZA,CUNDINAMARCA,Uchuva,Ondulado
+FUNZA,CUNDINAMARCA,Uchuva,Ondulado
+FUNZA,CUNDINAMARCA,Uchuva,Plano
+FUNZA,CUNDINAMARCA,Uchuva,Plano
+
+Variable,Mediana
+"pH_agua:suelo 2,5:1,0",5.66
+Materia_organica (MO) %,4.219958917547867
+Fosforo (P) Bray II mg/kg,19.464231620358984
+Azufre (S) Fosfato monocalcico mg/kg,6.97289156626506
+Acidez (Al+H) KCL cmol(+)/kg,0.33023769916776213
+Aluminio (Al) intercambiable cmol(+)/kg,0.0632798334024321
+calcio_ca_intercambiable_cmol_kg,5.94820262
+Potasio (K) intercambiable cmol(+)/kg,0.271943244
+Sodio (Na) intercambiable cmol(+)/kg,0.1459272499999999
+capacidad de intercambio cationico (CICE) suma de bases cmol(+)/kg,8.49529806740852
+"Conductividad electrica (CE) relacion 2,5:1,0 dS/m",0.2795236
+Hierro (Fe) disponible olsen mg/kg,600.688
+Cobre (Cu) disponible mg/kg,2.6180000000000003
+Manganeso (Mn) disponible Olsen mg/kg,3.865
+Zinc (Zn) disponible Olsen mg/kg,3.462
+Boro (B) disponible mg/kg,0.3202127659574468
+Hierro (Fe) disponible doble acido mg/kg,
+Cobre (Cu) disponible doble acido mg/kg,
+Manganeso (Mn) disponible doble acido mg/kg,
+Zinc (Zn) disponible doble  cido mg/kg,
