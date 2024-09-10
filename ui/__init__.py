@@ -1,8 +1,7 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from api import buscar
 import pandas as pd
+from api import buscar
+import sys
+sys.stdout.reconfigure(encoding='UTF-8')
 
 def tomarDatos():
     
@@ -13,7 +12,7 @@ def tomarDatos():
             
             if limite < 500:              
                 departamento = input("Ingrese el nombre del departamento a buscar: ")
-                municipio = input("ingrese el nombre del municipio: ")
+                municipio = input("Ingrese el nombre del municipio: ")
                 cultivo = input("Ingrese el cultivo que desea consultar: ")      
                 break
             
@@ -22,6 +21,4 @@ def tomarDatos():
         except ValueError:
             print("El número tiene que ser un entero. Intente nuevamente.")
     
-    dataFrame = buscar(limite,departamento.upper(),municipio.upper(),cultivo)
-    
-    
+    dataFrame = buscar(limite, departamento.upper(), municipio.upper(), cultivo)
