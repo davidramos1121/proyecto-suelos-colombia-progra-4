@@ -1,5 +1,5 @@
-from sodapy import Socrata
 import pandas as pd
+from sodapy import Socrata
 
 def buscar(numeroRegistros, departamentos, municipios, cultivos):
     cliente = Socrata("www.datos.gov.co", None)
@@ -15,9 +15,11 @@ def buscar(numeroRegistros, departamentos, municipios, cultivos):
             
         resultados = cliente.get("ch4u-f3i5", **consulta, limit=numeroRegistros)
         
+        
         if not resultados:
             print("No se encontraron resultados a la búsqueda solicitada\n*Pruebe llenando los campos nuevamente\n*Recuerde llenar los campos correctamente\n*Recuerde que para el campo de los cultivos debe usar las respectivas mayúsculas y guiones(-) de ser necesario")
             return None
+        
         
         resultadosDataFrame = pd.DataFrame.from_records(resultados)
         
@@ -48,9 +50,10 @@ def buscar(numeroRegistros, departamentos, municipios, cultivos):
         'manganeso_mn_disponible_doble_acido_mg_kg' : 'Manganeso (Mn) disponible doble acido mg/kg',
         'zinc_zn_disponible_doble_cido_mg_kg' : 'Zinc (Zn) disponible doble  cido mg/kg'
     }
-   
+    
     
     medianas = {}
+    
     
     for columna, nombre in columnasInteres.items():
         if columna in resultadosDataFrame.columns:
@@ -60,20 +63,18 @@ def buscar(numeroRegistros, departamentos, municipios, cultivos):
             print(f"La columna '{nombre}' no está presente en los resultados.")
             medianas[nombre] = None
     
-                   
+    
     columnasMostrar = ['municipio', 'departamento', 'cultivo', 'topografia']
     resultadosDataFrame = resultadosDataFrame[columnasMostrar]
     
-    convertirCVS(medianas,resultadosDataFrame)
+    convertirCVS(medianas, resultadosDataFrame)
     mostrar(resultadosDataFrame, medianas)
-
-
-
-def convertirCVS(medianas,resultadosDataFrame):
     
+
+def convertirCVS(medianas, resultadosDataFrame):
     medianasDataFrame = pd.DataFrame(list(medianas.items()), columns=['Variable', 'Mediana'])
     
-    with open("resultados_y_medianas.csv", "w") as f:
+    with open("resultados_y_medianas.csv", "w", encoding='utf-8') as f:
         resultadosDataFrame.to_csv(f, index=False)
         f.write("\n") 
         medianasDataFrame.to_csv(f, index=False)
